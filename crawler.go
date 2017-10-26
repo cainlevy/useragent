@@ -2,20 +2,6 @@
 
 package useragent
 
-import (
-	"net/url"
-)
-
-// Keep them sorted
-var crawlers = map[string]*url.URL{
-	"Google AdsBot":    u("https://support.google.com/webmasters/answer/1061943"),
-	"Google AdSense":   u("https://support.google.com/webmasters/answer/1061943"),
-	"Googlebot":        u("http://www.google.com/bot.html"),
-	"Googlebot Images": u("https://support.google.com/webmasters/answer/1061943"),
-	"Googlebot News":   u("https://support.google.com/news/publisher/answer/93977"),
-	"Googlebot Video":  u("https://support.google.com/webmasters/answer/1061943"),
-}
-
 func parseCrawler(l *lex) *UserAgent {
 	for _, f := range []parseFn{parseGooglebot, parseGooglebotSmartphone} {
 		if ua := f(newLex(l.s)); ua != nil {

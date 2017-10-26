@@ -428,6 +428,16 @@ func TestGeneric(t *testing.T) {
 		t.Errorf("expected %+v, got %+v\n", want, got)
 	}
 
+	got = Parse(`curl/7.54.0`)
+	want.Type = Library
+	want.OS = "unknown"
+	want.OSVersion = semver.Version{}
+	want.Name = "curl"
+	want.Version = mustParse("7.54.0")
+	want.Security = SecurityUnknown
+	if !eqUA(want, got) {
+		t.Errorf("expected %+v, got %+v\n", want, got)
+	}
 }
 
 func TestPhantomJS(t *testing.T) {

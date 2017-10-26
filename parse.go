@@ -261,23 +261,3 @@ func parseNameVersion(l *lex, ua *UserAgent) bool {
 
 	return parseVersion(l, ua, " ")
 }
-
-func parseGeneric(l *lex) *UserAgent {
-	ua := new()
-	if !parseNameVersion(l, ua) {
-		return nil
-	}
-	if url, ok := browsers[ua.Name]; ok {
-		ua.Type = Browser
-		ua.URL = url
-		return ua
-	}
-
-	if url, ok := crawlers[ua.Name]; ok {
-		ua.Type = Crawler
-		ua.URL = url
-		return ua
-	}
-
-	return nil
-}

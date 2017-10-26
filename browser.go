@@ -3,25 +3,8 @@
 package useragent
 
 import (
-	"net/url"
-
 	"github.com/blang/semver"
 )
-
-// Keep them sorted
-var browsers = map[string]*url.URL{
-	"Chrome":    u("http://www.chromium.org/"),
-	"Dillo":     u("http://www.dillo.org/"),
-	"Edge":      u("https://www.microsoft.com/en-us/windows/microsoft-edge"),
-	"Firefox":   u("https://www.mozilla.org/en-US/firefox"),
-	"IceCat":    u("https://www.gnu.org/software/gnuzilla/"),
-	"Iceweasel": u("https://wiki.debian.org/Iceweasel"),
-	"NetSurf":   u("http://www.netsurf-browser.org/"),
-	"Opera":     u("http://www.opera.com/"),
-	"PhantomJS": u("http://phantomjs.org/"),
-	"Silk":      u("http://aws.amazon.com/documentation/silk/"),
-	"WebView":   u("http://developer.android.com/guide/webapps/webview.html"),
-}
 
 const (
 	OSAndroid = "Android"
