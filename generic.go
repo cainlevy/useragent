@@ -5,6 +5,7 @@ import "net/url"
 // Keep them sorted
 var libraries = map[string]*url.URL{
 	"curl":      u("https://curl.haxx.se/"),
+	"HTTPie":    u("https://github.com/jakubroztocil/httpie"),
 	"PhantomJS": u("http://phantomjs.org/"),
 }
 

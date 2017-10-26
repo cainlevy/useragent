@@ -438,6 +438,17 @@ func TestGeneric(t *testing.T) {
 	if !eqUA(want, got) {
 		t.Errorf("expected %+v, got %+v\n", want, got)
 	}
+
+	got = Parse(`HTTPie/0.9.8`)
+	want.Type = Library
+	want.OS = "unknown"
+	want.OSVersion = semver.Version{}
+	want.Name = "HTTPie"
+	want.Version = mustParse("0.9.8")
+	want.Security = SecurityUnknown
+	if !eqUA(want, got) {
+		t.Errorf("expected %+v, got %+v\n", want, got)
+	}
 }
 
 func TestPhantomJS(t *testing.T) {
